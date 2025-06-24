@@ -1,4 +1,4 @@
-package ScannerTest;
+package scannerTest;
 import java.util.Scanner;
 
 public class SistemaCompra {

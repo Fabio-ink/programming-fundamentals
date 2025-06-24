@@ -2,11 +2,12 @@ package conditionalStructure;
 
 import java.util.Scanner;
 
-//Faixa salarial	        Alíquota	     Cálculo aplicado sobre a parte excedente
-//Até R$ 2000,00	         Isento	         Não paga nada
-//De R$ 2000,01 a 3000,00	 8%	             Paga 8% sobre o que passar de 2000
-//De R$ 3000,01 a 4500,00	 18%	         Paga 18% sobre o que passar de 3000
-//Acima de R$ 4500,00	     28%	         Paga 28% sobre o que passar de 4500
+/*  Faixa salarial	         Alíquota	     Cálculo aplicado sobre a parte excedente
+    Até R$ 2000,00	         Isento	         Não paga nada
+    De R$ 2000,01 a 3000,00	 8%	             Paga 8% sobre o que passar de 2000
+    De R$ 3000,01 a 4500,00	 18%	         Paga 18% sobre o que passar de 3000
+    Acima de R$ 4500,00	     28%	         Paga 28% sobre o que passar de 4500
+*/
 
 public class Taxalculation {
     public static void main(String[] args) {

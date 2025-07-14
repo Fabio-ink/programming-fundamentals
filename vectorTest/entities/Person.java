@@ -5,19 +5,17 @@ public class Person {
     private String name;
     private Double height;
     private Integer age;
-    
+   
     public Person(String name, Double height, Integer age) {
         this.name = name;
         this.height = height;
         this.age = age;
     }
     
-
     public Person(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
-
 
     public String getName() {
         return name;
@@ -43,6 +41,5 @@ public class Person {
         this.age = age;
     }
 
-    
 
 }

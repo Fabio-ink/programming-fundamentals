@@ -1,4 +1,4 @@
-package basics.datetime.application;
+package basics.datetime.syntax;
 
 import java.time.Instant;
 import java.time.LocalDate;

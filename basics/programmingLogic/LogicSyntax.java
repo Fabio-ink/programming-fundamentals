@@ -1,8 +1,8 @@
-package basics.syntaxFunctions;
+package basics.programmingLogic;
 
 import java.util.Scanner;
 
-public class HigherThan {
+public class LogicSyntax {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         

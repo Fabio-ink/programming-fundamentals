@@ -14,7 +14,7 @@ Conceitos fundamentais da linguagem.
 - `scanner/`: Entrada de dados pelo usuário usando `Scanner`.
 - `operators/`: Operadores aritméticos, lógicos e bit a bit.
 - `strings/`: Manipulação de strings em Java.
-- `syntaxFunctions/`: Funções auxiliares e sintaxe prática.
+- `programmingLogic/`: Sintaxe básica de lógica de programação.
 - `datetime/`: Manipulação de datas, horas e durações (`LocalDate`, `Duration`, etc).
 
 ### 🔁 controlStructures/

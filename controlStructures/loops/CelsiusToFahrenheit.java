@@ -12,7 +12,7 @@ public class CelsiusToFahrenheit {
             Double c = sc.nextDouble();
             Double f = (9 * c) / 5 + 32;
             System.out.printf("A temperatura em questão em Fahrenheit é: %.1f%n", f);
-            System.out.println("Se repetir (s/n)?");
+            System.out.println("Deseja repetir (s/n)?");
             response = sc.next().charAt(0);
         } while (response != 'n');
         

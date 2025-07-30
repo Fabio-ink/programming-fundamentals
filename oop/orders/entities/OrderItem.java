@@ -1,19 +1,17 @@
 package oop.orders.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OrderItem {
 
     private Integer quantity;
     private Double price;
 
-    List<Product> products = new ArrayList<>();
+    private Product product; 
 
     public OrderItem(){
     }
 
-    public OrderItem(Integer quantity, Double price) {
+    public OrderItem(Product product, Integer quantity, Double price) {
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
     }
@@ -33,20 +31,23 @@ public class OrderItem {
     public void setPrice(Double price) {
         this.price = price;
     }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void addProduct(Product product){
-        products.add(product);
-    }
-
-    public void removeProduct(Product product){
-        products.remove(product);
-    }
     
     public Double subTotal(){
         return price * quantity;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return product.getName() + ", R$" + price + ", Quantidade: " + quantity + ", Subtotal: R$" + subTotal();
+    }
+
+    
 }

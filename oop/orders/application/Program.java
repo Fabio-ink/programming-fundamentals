@@ -2,10 +2,15 @@ package oop.orders.application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import oop.orders.entities.Client;
+import oop.orders.entities.Order;
+import oop.orders.entities.OrderItem;
+import oop.orders.entities.Product;
 import oop.orders.entities.enums.OrderStatus;
 
 public class Program {
@@ -30,15 +35,33 @@ public class Program {
         Integer n = sc.nextInt();
         sc.nextLine();
 
-        String nameProduct;
+
+        List<OrderItem> orders = new ArrayList<>();
+
         for(int i =0; i < n; i++){
             System.out.println("-----Dados do #" + (i + 1) + " produto-----");
             System.out.print("Nome do produto: ");
-            nameProduct = sc.nextLine();
-
+            String nameProduct = sc.nextLine();
+            System.out.print("Qual o preço do produto: ");
+            Double productPrice = sc.nextDouble();
+            sc.nextLine();
+            System.out.print("Quantos deste produtos serão: ");
+            Integer quantity = sc.nextInt();
+            sc.nextLine();
+            Product product = new Product(nameProduct, productPrice);
+            OrderItem item = new OrderItem(product, quantity, productPrice);
+            orders.add(item);
         }
-
-        System.out.println(client);
+        Date now = new Date();
+        Order order = new Order(client, now, OrderStatus.valueOf(status.toUpperCase()));
+        for (OrderItem item : orders) {
+                order.addItem(item);
+            }
+        
+        System.out.println();
+        System.out.println("-----Revisão do pedido-----");
+        System.out.println(order);
+        
 
         sc.close();
     }

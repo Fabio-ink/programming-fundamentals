@@ -1,11 +1,11 @@
-package oop.orders.entities;
+package oop.composition.orders.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import oop.orders.entities.enums.OrderStatus;
+import oop.composition.orders.entities.enums.OrderStatus;
 
 public class Order {
 

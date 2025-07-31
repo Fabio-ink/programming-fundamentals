@@ -1,4 +1,4 @@
-package oop.postComment.entities;
+package oop.composition.postComment.entities;
 
 public class Comments {
 

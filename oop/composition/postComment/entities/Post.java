@@ -1,4 +1,4 @@
-package oop.postComment.entities;
+package oop.composition.postComment.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

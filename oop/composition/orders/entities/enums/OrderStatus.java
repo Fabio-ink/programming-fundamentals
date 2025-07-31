@@ -1,4 +1,4 @@
-package oop.orders.entities.enums;
+package oop.composition.orders.entities.enums;
 
 public enum OrderStatus {
 

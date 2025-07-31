@@ -1,4 +1,4 @@
-package oop.worker.entities;
+package oop.composition.worker.entities;
 
 import java.util.Date;
 

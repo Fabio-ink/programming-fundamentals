@@ -1,14 +1,14 @@
-package oop.worker.application;
+package oop.composition.worker.application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import oop.worker.entities.Department;
-import oop.worker.entities.HourContract;
-import oop.worker.entities.Worker;
-import oop.worker.entities.enums.WorkerLevel;
+import oop.composition.worker.entities.Department;
+import oop.composition.worker.entities.HourContract;
+import oop.composition.worker.entities.Worker;
+import oop.composition.worker.entities.enums.WorkerLevel;
 
 public class Program {
     public static void main(String[] args) throws ParseException {

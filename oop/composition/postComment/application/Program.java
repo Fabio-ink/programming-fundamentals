@@ -1,10 +1,10 @@
-package oop.postComment.application;
+package oop.composition.postComment.application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import oop.postComment.entities.Comments;
-import oop.postComment.entities.Post;
+import oop.composition.postComment.entities.Comments;
+import oop.composition.postComment.entities.Post;
 
 public class Program {
     public static void main(String[] args) throws ParseException {

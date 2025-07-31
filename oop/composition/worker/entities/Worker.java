@@ -1,9 +1,10 @@
-package oop.worker.entities;
+package oop.composition.worker.entities;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import oop.worker.entities.enums.WorkerLevel;
+
+import oop.composition.worker.entities.enums.WorkerLevel;
 
 public class Worker {
 

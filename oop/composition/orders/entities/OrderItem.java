@@ -1,4 +1,4 @@
-package oop.orders.entities;
+package oop.composition.orders.entities;
 
 public class OrderItem {
 

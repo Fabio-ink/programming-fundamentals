@@ -1,4 +1,4 @@
-package oop.worker.entities.enums;
+package oop.composition.worker.entities.enums;
 
 public enum WorkerLevel {
 

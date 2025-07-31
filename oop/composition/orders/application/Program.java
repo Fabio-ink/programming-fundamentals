@@ -1,4 +1,4 @@
-package oop.orders.application;
+package oop.composition.orders.application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,11 +7,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import oop.orders.entities.Client;
-import oop.orders.entities.Order;
-import oop.orders.entities.OrderItem;
-import oop.orders.entities.Product;
-import oop.orders.entities.enums.OrderStatus;
+import oop.composition.orders.entities.Client;
+import oop.composition.orders.entities.Order;
+import oop.composition.orders.entities.OrderItem;
+import oop.composition.orders.entities.Product;
+import oop.composition.orders.entities.enums.OrderStatus;
 
 public class Program {
     public static void main(String[] args) throws ParseException {

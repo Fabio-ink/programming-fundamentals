@@ -47,6 +47,6 @@ public class Account {
     public String toString() {
         return "Account [number = " + number + ", holder = " + holder + ", balance = " + balance + "]";
     }
-
-    
 }
+    
+

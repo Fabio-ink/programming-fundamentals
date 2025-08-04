@@ -11,199 +11,34 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        List<Account> accounts = new ArrayList<>();
-        List<BusinessAccount>  businessAccounts = new ArrayList<>();
+       List<Account> accounts = new ArrayList<>();
 
-        System.out.println("Bem vindo ao banco X");
-        Integer option = 0;
+        System.out.println("Bem-vindo ao banco X");
+        int option;
+
         do {
-            System.out.println("-----Que tipo de operação deseja realizar-----");
-            System.out.println(" 1 - cadastro de conta (Pessoa física)\n 2 - Cadastro de conta (Pessoa jurídica)\n 3 - Saque\n 4 - Depósito\n 5 - Empréstimo\n 6 - Revisar conta\n 7 - Sair");
+            System.out.println("----- Que tipo de operação deseja realizar -----");
+            System.out.println("""
+                1 - Cadastro de conta (Pessoa Física)
+                2 - Cadastro de conta (Pessoa Jurídica)
+                3 - Saque
+                4 - Depósito
+                5 - Empréstimo
+                6 - Revisar conta
+                7 - Sair
+            """);
             option = sc.nextInt();
-    
+            sc.nextLine();
+
             switch (option) {
-                case 1:
-                    System.out.println();
-                    System.out.println("-----Inciando o cadastro da conta-----");
-                    System.out.print("Qual o número da conta: ");
-                    Integer number = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Quem será o proprietário da conta: ");
-                    String holder = sc.nextLine();
-
-                    Account account = new Account(number, holder, 0.0);
-
-                    System.out.println("A conta terá um depósito inicial (s/n):");
-                    char response = sc.next().charAt(0);
-                    sc.nextLine();
-                    if (response == 's'){
-                        System.out.print("De quanto será o depósito inicial: ");
-                        Double depIni = sc.nextDouble();
-                        sc.nextLine();
-                        account.deposit(depIni);
-                    }
-                    accounts.add(account);
-                    break;
-                case 2:
-                    System.out.println();
-                    System.out.println("-----Inciando o cadastro da conta-----");
-                    System.out.print("Qual o número da conta: ");
-                    number = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Quem será o proprietário da conta: ");
-                    holder = sc.nextLine();
-                    System.out.print("Qual deseja que seja o limite da sua conta: ");
-                    Double loanLimit = sc.nextDouble();
-                    sc.nextLine();
-
-                    BusinessAccount businessAccount = new BusinessAccount(number, holder, 0.0, loanLimit);
-
-                    System.out.println("A conta terá um depósito inicial (s/n):");
-                    response = sc.next().charAt(0);
-                    sc.nextLine();
-                    if (response == 's'){
-                        System.out.print("De quanto será o depósito inicial: ");
-                        Double depIni = sc.nextDouble();
-                        sc.nextLine();
-                        businessAccount.deposit(depIni);
-                    }
-                    businessAccounts.add(businessAccount);
-                    break;
-                case 3:
-                    boolean encontrada = false;
-                    System.out.print("Qual o número da sua conta: ");
-                    Integer nAccount = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Qual o tipo da sua conta (F/J): ");
-                    char tipoConta = sc.next().charAt(0);
-                    sc.nextLine();
-                    if (tipoConta == 'F' || tipoConta == 'f'){
-                        for (Account ac : accounts){
-                            if(ac.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.print("Qual será o valor que deseja sacar: ");
-                                Double ammount = sc.nextDouble();
-                                ac.withdraw(ammount);
-                                System.out.println("Saque realizado com sucesso");
-                                System.out.println();
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else if (tipoConta == 'J' || tipoConta == 'j'){
-                        for (BusinessAccount ba : businessAccounts){
-                            if(ba.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.print("Qual será o valor que deseja sacar: ");
-                                Double ammount = sc.nextDouble();
-                                ba.withdraw(ammount);
-                                System.out.println("Saque realizado com sucesso");
-                                System.out.println();
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else {
-                        System.out.println("O caracter que digitou está incorreto");
-                    }
-                    break;
-                case 4:
-                    encontrada = false;
-                    System.out.print("Qual o número da sua conta: ");
-                    nAccount = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Qual o tipo da sua conta (F/J): ");
-                    tipoConta = sc.next().charAt(0);
-                    sc.nextLine();
-                    if (tipoConta == 'F' || tipoConta == 'f'){
-                        for (Account ac : accounts){
-                            if(ac.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.print("Qual será o valor que deseja depositar: ");
-                                Double ammount = sc.nextDouble();
-                                ac.deposit(ammount);
-                                System.out.println("Depósito realizado com sucesso");
-                                System.out.println();
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else if (tipoConta == 'J' || tipoConta == 'j'){
-                        for (BusinessAccount ba : businessAccounts){
-                            if(ba.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.print("Qual será o valor que deseja depositar: ");
-                                Double ammount = sc.nextDouble();
-                                ba.deposit(ammount);
-                                System.out.println("Depósito realizado com sucesso");
-                                System.out.println();
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else {
-                        System.out.println("O caracter que digitou está incorreto");
-                    }
-                    break;
-                case 5:
-                    encontrada = false;
-                    System.out.print("Qual o número da sua conta corporativa: ");
-                    nAccount = sc.nextInt();
-                    sc.nextLine();
-
-                    for (BusinessAccount ba : businessAccounts){
-                        if(ba.getNumber() == nAccount){
-                            encontrada = true;
-                            System.out.print("Qual será o valor que deseja de empréstimo: ");
-                            Double ammount = sc.nextDouble();
-                            ba.loan(ammount);
-                            System.out.println("Empréstimo realizado com sucesso");
-                            System.out.println();
-                        } else if (!encontrada){
-                            System.out.println("O número da conta que digitou não exite ou é uma conta normal(Pessoa Fisíca)");
-                        }
-                    }
-                    break;
-                case 6:
-                    encontrada = false;
-                    System.out.print("Qual o número da sua conta: ");
-                    nAccount = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Qual o tipo da sua conta (F/J): ");
-                    tipoConta = sc.next().charAt(0);
-                    sc.nextLine();
-                    if (tipoConta == 'F' || tipoConta == 'f'){
-                        for (Account ac : accounts){
-                            if(ac.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.println();
-                                System.out.println("-----Dados da conta-----");
-                                System.out.println(ac);
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else if (tipoConta == 'J' || tipoConta == 'j'){
-                        for (BusinessAccount ba : businessAccounts){
-                            if(ba.getNumber() == nAccount){
-                                encontrada = true;
-                                System.out.println();
-                                System.out.println("-----Dados da conta-----");
-                                System.out.println(ba);
-                            } else if (!encontrada){
-                                System.out.println("O número da conta que digitou não exite");
-                            }
-                        }
-                    } else {
-                        System.out.println("O caracter que digitou está incorreto");
-                    }
-                    break;
-                case 7:
-                    System.out.println("Encerrando operações...");
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-                    break;
+                case 1 -> accounts.add(registerAccount(sc, false));
+                case 2 -> accounts.add(registerAccount(sc, true));
+                case 3 -> withdrawOperation(sc, accounts);
+                case 4 -> depositOperation(sc, accounts);
+                case 5 -> loanOperation(sc, accounts);
+                case 6 -> accountReview(sc, accounts);
+                case 7 -> System.out.println("Encerrando operações...");
+                default -> System.out.println("Opção inválida.");
             }
 
         } while (option != 7);
@@ -211,4 +46,98 @@ public class Program {
         sc.close();
     }
 
+ private static Account registerAccount(Scanner sc, boolean isBusiness) {
+        System.out.println("----- Iniciando o cadastro da conta -----");
+        System.out.print("Número da conta: ");
+        int number = sc.nextInt(); sc.nextLine();
+
+        System.out.print("Nome do titular: ");
+        String holder = sc.nextLine();
+
+        double initialDeposit = 0.0;
+        System.out.print("Deseja fazer um depósito inicial? (s/n): ");
+        char resp = sc.next().charAt(0); sc.nextLine();
+        if (resp == 's') {
+            System.out.print("Valor do depósito: ");
+            initialDeposit = sc.nextDouble(); sc.nextLine();
+        }
+
+        if (isBusiness) {
+            System.out.print("Limite de empréstimo: ");
+            double loanLimit = sc.nextDouble(); sc.nextLine();
+            BusinessAccount acc = new BusinessAccount(number, holder, initialDeposit, loanLimit);
+            return acc;
+        }
+
+        return new Account(number, holder, initialDeposit);
+    }
+
+    private static Account findAccount(Scanner sc, List<Account> accounts) {
+        System.out.print("Número da conta: ");
+        int numero = sc.nextInt(); sc.nextLine();
+
+        for (Account account : accounts) {
+            if (account.getNumber() == numero) {
+                return account;
+            }
+        }
+
+        System.out.println("Conta não encontrada.");
+        return null;
+    }
+
+    private static void withdrawOperation(Scanner sc, List<Account> accounts) {
+        Account account = findAccount(sc, accounts);
+        if (account != null) {
+            System.out.print("Valor do saque: ");
+            double value = sc.nextDouble(); sc.nextLine();
+            if (value > account.getBalance()){
+                System.out.println("Não é possivel completar a transação, saldo indisponivel!");
+                System.out.println();
+            } else{
+                account.withdraw(value);
+                System.out.println("Saque realizado com sucesso.");
+                System.out.println();
+            }
+        }
+    }
+
+     private static void depositOperation(Scanner sc, List<Account> accounts) {
+        Account account = findAccount(sc, accounts);
+        if (account != null) {
+            System.out.print("Valor do depósito: ");
+            double value = sc.nextDouble(); sc.nextLine();
+            account.deposit(value);
+            System.out.println("Depósito realizado com sucesso.");
+            System.out.println();
+        }
+    }
+
+    private static void loanOperation(Scanner sc, List<Account> accounts) {
+        Account account = findAccount(sc, accounts);
+        if (account instanceof BusinessAccount business) {
+            System.out.print("Valor do empréstimo: ");
+            double value = sc.nextDouble(); sc.nextLine();
+            if (value > ((BusinessAccount) account).getLoanLimit()){
+                System.out.println("Não foi possivel completar o empréstimo, limite de crédito ultrapassado");
+                System.out.println();
+            } else{
+                business.loan(value);
+                System.out.println("Empréstimo concedido com sucesso.");
+                System.out.println();
+            }
+        } else {
+            System.out.println("A conta não é do tipo corporativa.");
+            System.out.println();
+        }
+    }
+
+    private static void accountReview(Scanner sc, List<Account> accounts) {
+        Account account = findAccount(sc, accounts);
+        if (account != null) {
+            System.out.println("----- Dados da conta -----");
+            System.out.println(account);
+            System.out.println();
+        }
+    }
 }

@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import oop.inheritance.entities.Account;
 import oop.inheritance.entities.BusinessAccount;
+import oop.inheritance.entities.SavingsAccount;
 
 public class Program {
     public static void main(String[] args) {
@@ -19,11 +20,11 @@ public class Program {
         do {
             System.out.println("----- Que tipo de operação deseja realizar -----");
             System.out.println("""
-                1 - Cadastro de conta (Pessoa Física)
-                2 - Cadastro de conta (Pessoa Jurídica)
-                3 - Saque
-                4 - Depósito
-                5 - Empréstimo
+                1 - Abrir uma conta
+                2 - Saque
+                3 - Depósito
+                4 - Empréstimo
+                5 - Aplicar taxa de juros
                 6 - Revisar conta
                 7 - Sair
             """);
@@ -31,22 +32,29 @@ public class Program {
             sc.nextLine();
 
             switch (option) {
-                case 1 -> accounts.add(registerAccount(sc, false));
-                case 2 -> accounts.add(registerAccount(sc, true));
-                case 3 -> withdrawOperation(sc, accounts);
-                case 4 -> depositOperation(sc, accounts);
-                case 5 -> loanOperation(sc, accounts);
+                case 1 -> {
+                    Account newAccount = selectTipAccount(sc);
+                    if (newAccount != null) {
+                        accounts.add(newAccount);
+                        System.out.println("Conta criada com sucesso!");
+                        System.out.println();
+                    }
+                }
+                case 2 -> withdrawOperation(sc, accounts);
+                case 3 -> depositOperation(sc, accounts);
+                case 4 -> loanOperation(sc, accounts);
+                case 5 -> updateSavingsBalance(sc, accounts);
                 case 6 -> accountReview(sc, accounts);
                 case 7 -> System.out.println("Encerrando operações...");
                 default -> System.out.println("Opção inválida.");
             }
 
-        } while (option != 7);
+        } while (option != 7    );
 
         sc.close();
     }
 
- private static Account registerAccount(Scanner sc, boolean isBusiness) {
+ private static Account registerAccount(Scanner sc, boolean isBusiness, boolean isSaving) {
         System.out.println("----- Iniciando o cadastro da conta -----");
         System.out.print("Número da conta: ");
         int number = sc.nextInt(); sc.nextLine();
@@ -66,6 +74,13 @@ public class Program {
             System.out.print("Limite de empréstimo: ");
             double loanLimit = sc.nextDouble(); sc.nextLine();
             BusinessAccount acc = new BusinessAccount(number, holder, initialDeposit, loanLimit);
+            return acc;
+        }
+
+        if (isSaving){
+            System.out.print("Taxa de juros (aa): ");
+            Double interestRate = sc.nextDouble(); sc.nextLine();
+            SavingsAccount acc = new SavingsAccount(number, holder, initialDeposit, interestRate);
             return acc;
         }
 
@@ -138,6 +153,38 @@ public class Program {
             System.out.println("----- Dados da conta -----");
             System.out.println(account);
             System.out.println();
+        }
+    }
+    private static Account selectTipAccount(Scanner sc) {
+        System.out.println("----- Qual tipo de conta deseja abrir -----");
+        System.out.println("""
+            1 - Abrir uma conta Fisica
+            2 - Abrir uma conta Jurídica
+            3 - Abrir uma conta Poupança
+            4 - Cancelar
+        """);
+        int option = sc.nextInt();
+        sc.nextLine();
+
+        return switch (option) {
+            case 1 -> registerAccount(sc, false, false);
+            case 2 -> registerAccount(sc, true, false);
+            case 3 -> registerAccount(sc, false, true);
+            case 4 -> null;
+            default -> {
+                System.out.println("Opção inválida.");
+                yield null;
+            }
+        };
+    }
+
+    private static void updateSavingsBalance(Scanner sc, List<Account> accounts) {
+        Account account = findAccount(sc, accounts);
+        if (account instanceof SavingsAccount savings) {
+            savings.updateBalance();
+            System.out.println("Saldo atualizado com juros.");
+        } else {
+            System.out.println("A conta não é poupança.");
         }
     }
 }

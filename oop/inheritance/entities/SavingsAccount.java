@@ -1,6 +1,6 @@
 package oop.inheritance.entities;
 
-public class SavingsAccount extends Account{
+public final class SavingsAccount extends Account{ //A palavra final impede que sejam criadas subclasses da classe SavingsAccount.
 
     private Double interestRate;
 
@@ -23,6 +23,16 @@ public class SavingsAccount extends Account{
     public void updateBalance() {
         double updated = getBalance() * interestRate / 100;
         deposit(updated);
+    }
+
+    @Override
+    public final void withdraw(Double amount) { // reescreve o código da superclasse para que não aja desconto/taxa no saque.
+        this.balance -= amount;
+    }
+
+    @Override
+    public String toString() {
+        return "SavingsAccount [number = " + number + ", holder = " + holder + ", balance = " + balance + ", interest rate = " + interestRate + "]";
     }
     
 

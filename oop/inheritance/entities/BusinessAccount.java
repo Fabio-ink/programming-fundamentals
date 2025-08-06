@@ -28,4 +28,15 @@ public class BusinessAccount extends Account{
         }
     }
 
+    @Override
+    public final void withdraw(Double amount) { // Realiza o saque normal da superclasse (Account e desconta o valor a mais, no caso o 2.0)
+        super.withdraw(amount);
+        balance -= 2.0;
+    }
+
+    @Override
+    public String toString() {
+        return "BusinessAccount [number = " + number + ", holder = " + holder + ", loan limit = "+ loanLimit +", balance = " + balance + "]";
+    }
+
 }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 import oop.polymorphism.entities.Employee;
 import oop.polymorphism.entities.OutsourceEmployee;
 
-public class Program {
+public class IncomeCalculation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

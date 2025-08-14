@@ -50,11 +50,11 @@ public class Reservation {
                 + roomNumber
                 + ", Check-In: "
                 + sdf.format(checkIn)
-                + "Check-Out: "
+                + ", Check-Out: "
                 + sdf.format(checkOut)
                 + ", "
                 + duration()
-                + "Noites";
+                + " Noites";
     }
 
 }

@@ -24,7 +24,8 @@ public class SoldItem {
 		File sourceFile = new File(sourceFileStr);
 		String sourceFolderStr = sourceFile.getParent();
 		
-		boolean success = new File(sourceFolderStr + "/out").mkdir();
+		@SuppressWarnings("unused")
+        boolean success = new File(sourceFolderStr + "/out").mkdir();
 		
 		String targetFileStr = sourceFolderStr + "/out/summary.csv";
 

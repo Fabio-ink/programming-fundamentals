@@ -46,9 +46,10 @@ public class Program {
             System.out.println("Unexpected error");
         }
         finally{
-            sc.close();
+            if(sc != null){
+                sc.close();
+            }
         }
-
         
     }
 

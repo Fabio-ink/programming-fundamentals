@@ -1,10 +1,10 @@
-package basics.scanner.files.application;
+package basics.scanner.files.syntax;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReaderBufferedReader {
+public class FileReaderAndBufferedReader {
     public static void main(String[] args) {
         
         String path = "/home/fluxyfp/Área de trabalho/in.txt";

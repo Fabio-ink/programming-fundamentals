@@ -1,4 +1,4 @@
-package basics.scanner.files.application;
+package basics.scanner.files.syntax;
 
 import java.io.File;
 import java.io.IOException;

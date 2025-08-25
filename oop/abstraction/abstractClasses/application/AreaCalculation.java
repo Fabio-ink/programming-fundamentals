@@ -1,13 +1,13 @@
-package oop.abstraction.application;
+package oop.abstraction.abstractClasses.application;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import oop.abstraction.entities.Circle;
-import oop.abstraction.entities.Color;
-import oop.abstraction.entities.Rectangle;
-import oop.abstraction.entities.Shape;
+import oop.abstraction.abstractClasses.entities.Circle;
+import oop.abstraction.abstractClasses.entities.Color;
+import oop.abstraction.abstractClasses.entities.Rectangle;
+import oop.abstraction.abstractClasses.entities.Shape;
 
 public class AreaCalculation {
     public static void main(String[] args) {

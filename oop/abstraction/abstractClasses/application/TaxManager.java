@@ -1,12 +1,12 @@
-package oop.abstraction.application;
+package oop.abstraction.abstractClasses.application;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import oop.abstraction.entities.LegalPerson;
-import oop.abstraction.entities.NaturalPerson;
-import oop.abstraction.entities.Person;
+import oop.abstraction.abstractClasses.entities.LegalPerson;
+import oop.abstraction.abstractClasses.entities.NaturalPerson;
+import oop.abstraction.abstractClasses.entities.Person;
 
 public class TaxManager {
     public static void main(String[] args) {

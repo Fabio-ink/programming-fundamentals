@@ -1,4 +1,4 @@
-package oop.abstraction.entities;
+package oop.abstraction.abstractClasses.entities;
 
 public class NaturalPerson extends Person{
 

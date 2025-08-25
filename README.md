@@ -50,6 +50,11 @@ Tratamento de exceções com `try-catch`, `finally` e boas práticas de manipula
 Programação Orientada a Objetos.
 
 - **`abstraction/`**: Classes e métodos abstratos.
+  - `abstract-classes/`: Conceitos e exemplos de classes abstratas.
+  - `interfaces/`: Definição de contratos, implementação múltipla e comparação com herança.
+- **`composition/`**: Composição de objetos.
+- **`inheritance/`**: Herança entre classes.
+- **`polymorphism/`**: Sobrescrita de métodos, comportamento dinâmico e upcasting/downcasting.
 - **`composition/`**: Composição de objetos.
 - **`inheritance/`**: Herança entre classes.
 - **`polymorphism/`**: Sobrescrita de métodos, comportamento dinâmico e upcasting/downcasting.

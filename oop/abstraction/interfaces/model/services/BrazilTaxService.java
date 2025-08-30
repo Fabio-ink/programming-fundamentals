@@ -1,8 +1,9 @@
 package oop.abstraction.interfaces.model.services;
 
-public class BrazilTaxService {
-
-    public Double tax(Double ammount){
+public class BrazilTaxService implements TaxService {
+    
+    @Override
+    public double tax(double ammount) {
         if (ammount <= 100){
             return ammount * 0.2;
         }

@@ -7,7 +7,7 @@ import oop.abstraction.interfaces.model.entities.Vehicle;
 import oop.abstraction.interfaces.model.services.BrazilTaxService;
 import oop.abstraction.interfaces.model.services.RentalService;
 
-public class Program {
+public class ParkingSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter sdf = DateTimeFormatter.ofPattern(("dd/MM/yyyy HH:mm"));

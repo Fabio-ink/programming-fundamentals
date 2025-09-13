@@ -1,6 +1,6 @@
 package oop.abstraction.abstractClasses.entities;
 
-public class Circle extends Shape{
+public class Circle extends AbstractShape{
 
     private Double radius;
 
@@ -18,7 +18,7 @@ public class Circle extends Shape{
     }
 
     @Override
-    public Double getArea() {
+    public Double area() {
         return Math.PI * (radius * radius);
     }
 }
